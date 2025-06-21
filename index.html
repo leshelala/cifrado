@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Cifrado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Página de Cifrado</h1>
+        <label for="mensaje">Introduce tu mensaje:</label>
+        <textarea id="mensaje" rows="4"></textarea>
+        
+        <label for="clave">Clave de cifrado (solo para cifrado César):</label>
+        <input type="number" id="clave" min="1" max="25" value="3">
+        
+        <div class="botones">
+            <button onclick="cifrar()">Cifrar</button>
+            <button onclick="descifrar()">Descifrar</button>
+        </div>
+        
+        <h2>Resultado:</h2>
+        <div id="resultado"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
