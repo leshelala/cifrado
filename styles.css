@@ -1,23 +1,43 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 30px auto;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #f3f3f3;
-    padding: 20px;
-    border-radius: 8px;
+}
+
+.contenedor {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 18px 24px 18px;
+    box-shadow: 0 2px 12px #0003;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
     color: #2d3a4b;
+    margin-bottom: 18px;
 }
 
 label {
     font-weight: bold;
+    align-self: flex-start;
 }
 
-textarea, input, select, button {
-    margin: 8px 0;
+textarea, input, select {
+    margin: 8px 0 16px 0;
     font-size: 1em;
     width: 100%;
     box-sizing: border-box;
@@ -25,12 +45,19 @@ textarea, input, select, button {
 
 textarea {
     resize: vertical;
+    min-height: 80px;
+}
+
+.botones {
+    display: flex;
+    width: 100%;
+    gap: 4%;
+    margin-bottom: 10px;
 }
 
 button {
     width: 48%;
-    padding: 8px;
-    margin-right: 2%;
+    padding: 10px 0;
     background: #2d89ef;
     color: white;
     border: none;
@@ -38,24 +65,53 @@ button {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.2s;
+    font-size: 1em;
 }
 
 button:last-child {
-    margin-right: 0;
     background: #5eb55e;
 }
 
-button:hover {
+button:hover, button:focus {
     background: #205caa;
+    outline: none;
 }
 
 #resultado {
     margin-top: 18px;
     font-weight: bold;
-    background: #fff;
+    background: #f7f7f7;
     padding: 10px;
     border-radius: 5px;
     min-height: 40px;
     box-shadow: 0 2px 4px #0001;
     word-break: break-all;
+    width: 100%;
+    text-align: left;
+}
+
+/* Responsive para celulares */
+@media (max-width: 600px) {
+    .contenedor {
+        max-width: 98vw;
+        padding: 18px 4vw 18px 4vw;
+    }
+
+    textarea, input, select {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+    .botones {
+        flex-direction: column;
+        gap: 10px;
+    }
+    button {
+        width: 100%;
+        font-size: 1em;
+        padding: 10px 0;
+    }
 }
