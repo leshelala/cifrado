@@ -11,13 +11,11 @@
         <h1>Cifrados Simples</h1>
         <label for="mensaje">Mensaje:</label><br>
         <textarea id="mensaje" rows="4" cols="60"></textarea><br>
-        <label for="clave">Clave (número/texto):</label><br>
-        <input type="text" id="clave"><br>
-        <label for="tipo">Tipo de cifrado:</label>
-        <select id="tipo">
-            <option value="cesar">César</option>
+        <label for="clave" style="display:none;">Clave (número/texto):</label><br>
+        <input type="text" id="clave" style="display:none;"><br>
+        <label for="tipo" style="display:none;">Tipo de cifrado:</label>
+        <select id="tipo" style="display:none;">
             <option value="binario">Binario</option>
-            <option value="xor">XOR</option>
         </select><br>
         <div class="botones">
             <button onclick="cifrar()">Cifrar</button>
