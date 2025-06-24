@@ -1,125 +1,35 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+function textoABinario(texto) {
+    return texto
+        .split('')
+        .map(c => c.charCodeAt(0).toString(2).padStart(8, '0'))
+        .join(' ');
 }
 
-body {
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f3f3f3;
+function binarioATexto(binario) {
+    return binario
+        .trim()
+        .split(/\s+/)
+        .map(b => String.fromCharCode(parseInt(b, 2)))
+        .join('');
 }
 
-.contenedor {
-    background: #fff;
-    border-radius: 12px;
-    padding: 32px 18px 24px 18px;
-    box-shadow: 0 2px 12px #0003;
-    max-width: 600px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+function cifrar() {
+    const mensaje = document.getElementById('mensaje').value;
+    let resultado = textoABinario(mensaje);
+    document.getElementById('resultado').textContent = resultado || "Introduce un mensaje para cifrar.";
 }
 
-h1 {
-    text-align: center;
-    color: #2d3a4b;
-    margin-bottom: 18px;
-    font-size: 2em;
-}
-
-label {
-    font-weight: bold;
-    align-self: flex-start;
-    margin-bottom: 6px;
-}
-
-textarea {
-    margin: 8px 0 16px 0;
-    font-size: 1em;
-    width: 100%;
-    min-height: 80px;
-    box-sizing: border-box;
-    resize: vertical;
-    border-radius: 6px;
-    border: 1px solid #c5c5c5;
-    padding: 8px;
-    background: #f7f7f7;
-}
-
-.botones {
-    display: flex;
-    width: 100%;
-    gap: 4%;
-    margin-bottom: 10px;
-}
-
-button {
-    width: 48%;
-    padding: 10px 0;
-    background: #2d89ef;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s;
-    font-size: 1em;
-}
-
-button:last-child {
-    background: #5eb55e;
-}
-
-button:hover, button:focus {
-    background: #205caa;
-    outline: none;
-}
-
-#resultado {
-    margin-top: 18px;
-    font-weight: bold;
-    background: #f7f7f7;
-    padding: 10px;
-    border-radius: 5px;
-    min-height: 40px;
-    box-shadow: 0 2px 4px #0001;
-    word-break: break-all;
-    width: 100%;
-    text-align: left;
-    font-size: 1.1em;
-}
-
-/* Responsive para celulares */
-@media (max-width: 600px) {
-    .contenedor {
-        max-width: 98vw;
-        padding: 18px 4vw 18px 4vw;
+function descifrar() {
+    const mensaje = document.getElementById('mensaje').value;
+    let resultado = '';
+    try {
+        resultado = binarioATexto(mensaje);
+        // Verifica si el resultado tiene caracteres válidos
+        if (!resultado.replace(/\s/g, '').length) {
+            resultado = "Introduce un binario válido para descifrar.";
+        }
+    } catch (e) {
+        resultado = "Introduce un binario válido para descifrar.";
     }
-
-    textarea {
-        font-size: 1em;
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 1.3em;
-    }
-    .botones {
-        flex-direction: column;
-        gap: 10px;
-    }
-    button {
-        width: 100%;
-        font-size: 1em;
-        padding: 10px 0;
-    }
-    #resultado {
-        font-size: 1em;
-        padding: 8px;
-    }
+    document.getElementById('resultado').textContent = resultado;
 }
