@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Cifrados Simples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cifrados Simples</h1>
-    <label for="mensaje">Mensaje:</label><br>
-    <textarea id="mensaje" rows="4" cols="60"></textarea><br>
-    <label for="clave">Clave (número/texto):</label><br>
-    <input type="text" id="clave"><br>
-    <label for="tipo">Tipo de cifrado:</label>
-    <select id="tipo">
-        <option value="cesar">César</option>
-        <option value="binario">Binario</option>
-        <option value="xor">XOR</option>
-    </select><br>
-    <button onclick="cifrar()">Cifrar</button>
-    <button onclick="descifrar()">Descifrar</button>
-    <div id="resultado"></div>
+    <div class="contenedor">
+        <h1>Cifrados Simples</h1>
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" rows="4" cols="60"></textarea><br>
+        <label for="clave">Clave (número/texto):</label><br>
+        <input type="text" id="clave"><br>
+        <label for="tipo">Tipo de cifrado:</label>
+        <select id="tipo">
+            <option value="cesar">César</option>
+            <option value="binario">Binario</option>
+            <option value="xor">XOR</option>
+        </select><br>
+        <div class="botones">
+            <button onclick="cifrar()">Cifrar</button>
+            <button onclick="descifrar()">Descifrar</button>
+        </div>
+        <div id="resultado"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
