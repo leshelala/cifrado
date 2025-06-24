@@ -29,23 +29,26 @@ h1 {
     text-align: center;
     color: #2d3a4b;
     margin-bottom: 18px;
+    font-size: 2em;
 }
 
 label {
     font-weight: bold;
     align-self: flex-start;
-}
-
-textarea, input, select {
-    margin: 8px 0 16px 0;
-    font-size: 1em;
-    width: 100%;
-    box-sizing: border-box;
+    margin-bottom: 6px;
 }
 
 textarea {
-    resize: vertical;
+    margin: 8px 0 16px 0;
+    font-size: 1em;
+    width: 100%;
     min-height: 80px;
+    box-sizing: border-box;
+    resize: vertical;
+    border-radius: 6px;
+    border: 1px solid #c5c5c5;
+    padding: 8px;
+    background: #f7f7f7;
 }
 
 .botones {
@@ -88,6 +91,7 @@ button:hover, button:focus {
     word-break: break-all;
     width: 100%;
     text-align: left;
+    font-size: 1.1em;
 }
 
 /* Responsive para celulares */
@@ -97,13 +101,13 @@ button:hover, button:focus {
         padding: 18px 4vw 18px 4vw;
     }
 
-    textarea, input, select {
+    textarea {
         font-size: 1em;
         width: 100%;
     }
 
     h1 {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
     .botones {
         flex-direction: column;
@@ -113,5 +117,9 @@ button:hover, button:focus {
         width: 100%;
         font-size: 1em;
         padding: 10px 0;
+    }
+    #resultado {
+        font-size: 1em;
+        padding: 8px;
     }
 }
